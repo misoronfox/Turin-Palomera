@@ -16,7 +16,6 @@
 .btn{
     background-color: transparent !important;
     color: #c3b091 !important;
-    display: block !important;
 }
 
 .btn-outline-primary{
@@ -30,4 +29,11 @@
     padding: 0px !important;
     color: #c3b091 !important; 
     border-color: #c3b091 !important; 
+}
+.bi-icon-m{
+    font-size: 2em;
+    color: #c3b091;
+}
+.App{
+    background-color: #c3b091;
 }

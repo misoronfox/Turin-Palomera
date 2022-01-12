@@ -1,12 +1,11 @@
 import React from 'react';
-import {Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import CartWidjet from './CartWidjet.jsx'
 
-class Navbarra extends React.Component {
-    render() {
+const Navbarra = ( ) => {
         return(
-            <Navbar  expand="lg" className='NavBar col '>
-                <Container className='NavBar row '>
-                    <Nav className='col '>
+            <Navbar className='NavBar row '>
+                    <Nav className='col-8 '>
                         <NavDropdown className='col NavDropDownItem' title={<span className="my-auto NavDropDown">Fermentados</span>} id="Fermentados">
                             <NavDropdown.Item className='NavDropDownItem' href="#home">Cerveza</NavDropdown.Item>
                             <NavDropdown.Item className='NavDropDownItem' href="#home">Sidra</NavDropdown.Item>
@@ -31,25 +30,25 @@ class Navbarra extends React.Component {
                             <NavDropdown.Item className='NavDropDownItem' href="#home">Licor de café</NavDropdown.Item>
                         
                         </NavDropdown>
-                        <div className=' '>
-                            <form  className=' row'>
-                                <input 
-                                    className='form-control col '
-                                    type="text"
-                                    id="search-bar"
-                                    placeholder="Buscar"
-                                    name="s" 
-                                />
-                                <button type="submit" className=' col btn btn-outline-primary' >Search</button>
-                            </form>
-                        </div>
                     </Nav>
+                    <div className='col-3'>    
+                        <form  className=' row'>
+                                <input 
+                                className='form-control col'
+                                type="text"
+                                id="search-bar"
+                                placeholder="Buscar"
+                                name="s" 
+                                />
+                                <button type="submit" className='col btn btn-outline-primary' >Search  </button>
+                        </form>
+                    </div>
+                    <div className='col-1'><CartWidjet/></div>
 
-                    
-                </Container>
+                     
             </Navbar>
         )
-    }
+
 }
 
 export default Navbarra;
