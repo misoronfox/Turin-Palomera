@@ -44,8 +44,6 @@ const Navbarra = ( ) => {
                         </form>
                     </div>
                     <div className='col-1'><CartWidjet/></div>
-
-                     
             </Navbar>
         )
 
