@@ -1,26 +1,38 @@
 import React, { useState } from 'react';
-import decrease from './DecreaseCounter'
-import increase from './IncreaseCounter'
 
-function ItemCount() {
+
+const ItemCount = () => {
   const [count, setCount] = useState(0);
   var stock = 10;
+  const DecreaseCounter = (count, stock) =>{
+        if(count > 0 & count <= stock){
+        count = count - 1
+        }
+        return count;
+    };
+    const IncreaseCounter = (count, stock) =>{
+        if(count < stock){
+        count = count + 1
+        
+        }
+        return count;
+    };
 
   return (
     <div className='row'>
         <div className='col'>
             
-            <button onClick={() => setCount(decrease(count, stock))} className='btn '>
+            <button onClick={() => setCount(DecreaseCounter(count, stock))} className='btn '>
                 <i className="bi bi-arrow-left-circle"></i>
             </button>
         </div>
 
         <div className='col'>
-            <p>You clicked {count} times</p>
+            <p>{count}</p>
         </div>
 
         <div className='col'>
-            <button onClick={() => setCount(increase(count, stock))} className='btn '>
+            <button onClick={() => setCount(IncreaseCounter(count, stock))} className='btn '>
                 <i className="bi bi-arrow-right-circle"></i>
             </button>
         </div>

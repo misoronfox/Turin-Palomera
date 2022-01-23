@@ -1,17 +1,16 @@
-const ItemListContainer = () =>{
-    return(
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel.
-                    </p>
+import { Container, Row } from 'react-bootstrap'
+import ItemList from './ItemList'
 
-                </div>
-
-            </div>
-
-        </div>
+const ItemListContainer = ({products}) =>{
+    
+    
+    return (
+        <Container>
+            <Row>
+                <ItemList products={products} />
+            </Row>
+        </Container>
     )
+       
 } 
 export default ItemListContainer
