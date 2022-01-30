@@ -2,8 +2,10 @@ import './styles/App.css' ;
 import Navbarra from './components/NavBar';
 import './styles/StyleSheet.css';
 import ItemListContainer from './components/ItemListContainer'
-import { useState, useEffect } from 'react';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import React, { useState, useEffect } from 'react';
 import { getProductsFromCategory } from './services/Products';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 function App() {
   const [products, setProducts] = useState([])
@@ -16,7 +18,6 @@ function App() {
       if(mounted) {
         console.log(items)
         setProducts(items)
-
       }
     })
     return () => mounted = false ;
@@ -24,15 +25,15 @@ function App() {
 
 
   return (
-    <>
+    <BrowserRouter>
+      <Routes>
+        <Route  path="/" element={<ItemListContainer products={products}/>} >
+          <Route path="/Item/:id" element={<ItemDetailContainer />} />
+          <Route  index path="/category/:id" element={<ItemListContainer/>} />     
+        </Route>       
+      </Routes>
+    </BrowserRouter>
     
-      <header className="App">
-        <Navbarra/>
-      </header>
-      <div className="App"> 
-        <ItemListContainer products={products}/>
-      </div>
-    </>
   );
 }
 

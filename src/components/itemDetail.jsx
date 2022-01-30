@@ -12,7 +12,7 @@ const Item = ( product ) => {
                 <Card.Title>
                     {price}
                 </Card.Title>          
-            </Card.Body>              
+            </Card.Body>              345tg 
             <Card.Header>Detalles</Card.Header>            
             <ListGroup className="list-group-flush">
                 <ListGroup.Item>

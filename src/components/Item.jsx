@@ -1,15 +1,16 @@
 import ItemCount from './ItemCount';
 import {Card, ListGroup, Button } from "react-bootstrap";
-import ItemDetailContainer from './ItemDetailContainer';
+import { useNavigate } from 'react-router-dom';
 
 
 const Item = ({ product }) => {
-    const {title, price, category, description, image} = product
-    
+    const {id ,title, price, category, description, image} = product
+    const navigate = useNavigate()
 
-    const showDetails = (product) => {
+    const showDetails = () => {
+        navigate(`/Item/${id}`)
+        console.log(id, "caca")
         
-        return(<ItemDetailContainer product = {product} />)
     }
 
     return (
@@ -30,7 +31,7 @@ const Item = ({ product }) => {
                 </ListGroup.Item>    
             </ListGroup>             
             <Card.Body>
-                <Button onClick={() => showDetails(product)} className='btn btn-outline-primary' href='./ItemDetailContainer'>Mostrar más</Button>
+                <Button onClick={() => showDetails()} className='btn btn-outline-primary' >Mostrar más</Button>
                 <ItemCount/>
             </Card.Body>                
         </Card> 
