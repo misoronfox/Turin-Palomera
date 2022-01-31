@@ -6,9 +6,9 @@ import { getProductsById } from "../services/Products";
 
 
 const ItemDetailContainer = () =>{
-    const  id  = useParams();
-    const [product, setProduct] = useState([]);
-    console.log(product)
+    const  { id }  = useParams();
+    const [product, setProduct] = useState({title:"caca"});
+    console.log(id, "cacax2")
 
     useEffect(() => {
         let mounted = true
@@ -19,12 +19,12 @@ const ItemDetailContainer = () =>{
             }
         })
         return () => mounted = false
-    }, []);
+    }, [id]);
     
     return (
         <Container>
             <Row>
-                <ItemDetail/>
+                <ItemDetail product={product}/>
             </Row>
         </Container>
     )

@@ -37,15 +37,4 @@ const Item = ({ product }) => {
         </Card> 
     )
 }
-
-
-
-
-
-
-
-
-
-
-
 export default Item;
