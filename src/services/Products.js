@@ -5,8 +5,15 @@ export const getProductsFromCategory = (category) => {
 
 export const getProductsById = (id) => {
     return fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(data => data.json())
-            
-            
-            
+            .then(data => data.json())         
+}
+
+export const getAllCategories = () => {
+    return fetch(`https://fakestoreapi.com/products/categories`)
+        .then(data => data.json())
+}
+
+export const getAllProducts = () => {
+    return fetch(`https://fakestoreapi.com/products`)
+        .then(data => data.json())
 }
