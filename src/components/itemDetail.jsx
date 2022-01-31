@@ -1,6 +1,7 @@
 import { Card, ListGroup,  } from "react-bootstrap";
 
-const Item = ( product ) => {
+const Item = ( {product} ) => {
+    console.log(product, "item detail");
     const {title, price, category, description, image} = product
     return (
         <Card >
@@ -12,7 +13,7 @@ const Item = ( product ) => {
                 <Card.Title>
                     {price}
                 </Card.Title>          
-            </Card.Body>              
+            </Card.Body> 
             <Card.Header>Detalles</Card.Header>            
             <ListGroup className="list-group-flush">
                 <ListGroup.Item>
