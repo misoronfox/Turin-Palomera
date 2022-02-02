@@ -3,6 +3,7 @@ import Navbarra from './components/NavBar';
 import './styles/StyleSheet.css';
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer';
+import ShoppingCart from './components/ShoppingCart'
 import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
@@ -11,10 +12,11 @@ function App() {
   return (
     <BrowserRouter>
       <Navbarra/>
-      <Routes>
-        <Route  path="/" element={<ItemListContainer />} />
+      <Routes >
+        <Route path="/" element={<ItemListContainer />} />
         <Route path="/Item/:id" element={<ItemDetailContainer />} />
-        <Route  path="/category/:id" element={<ItemListContainer/>} />         
+        <Route  path="/category/:id" element={<ItemListContainer/>} />  
+        <Route path="/Cart" element={<ShoppingCart/>} />       
       </Routes>
     </BrowserRouter>
     

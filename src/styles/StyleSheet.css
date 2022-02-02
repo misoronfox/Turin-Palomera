@@ -8,13 +8,10 @@
 	background-color: #8a3324 !important;
 	color: #c3b091 !important;
 }
-.dropdown-menu {
-	padding: 0px !important;
-}
 
 .btn {
 	background-color: transparent !important;
-	color: #c3b091;
+	color: #c3b091 !important;
 }
 
 .btn-outline-primary {
@@ -41,4 +38,11 @@
 	width: 100%;
 	height: 15vw;
 	object-fit: fill;
+}
+.btn-escondido {
+	display: none;
+}
+
+.hidden {
+	display: none !important;
 }

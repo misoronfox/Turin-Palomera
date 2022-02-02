@@ -9,7 +9,7 @@ import './styles/StyleSheet.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App classname="App" />
   </React.StrictMode>,
   document.getElementById('root')
 );
