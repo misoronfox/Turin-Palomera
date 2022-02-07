@@ -1,10 +1,12 @@
 import { Button, Card, ListGroup } from "react-bootstrap";
 import ItemCount from "./ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 const Item = ({ product }) => {
-	console.log(product, "item detail");
+	const { addItem } = useContext(CartContext);
+
 	const { title, price, category, description, image } = product;
 	const [quantity, setQuantity] = useState(0);
 	const navigate = useNavigate();
@@ -17,6 +19,7 @@ const Item = ({ product }) => {
 
 	function showCheckout() {
 		document.getElementById("CheckOut").classList.toggle("hidden");
+		addItem(product, quantity);
 	}
 	const checkOut = () => {
 		navigate(`/Cart`);

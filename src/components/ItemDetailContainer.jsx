@@ -1,7 +1,7 @@
 import { Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import ItemDetail from "./itemDetail";
+import ItemDetail from "./ItemDetail";
 import { getProductsById } from "../services/Products";
 
 const ItemDetailContainer = () => {
