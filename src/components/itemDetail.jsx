@@ -6,7 +6,7 @@ import { CartContext } from "./CartContext";
 
 const Item = ({ product }) => {
 	const { addItem } = useContext(CartContext);
-
+	const [added, setAdded] = useState(false);
 	const { title, price, category, description, image } = product;
 	const [quantity, setQuantity] = useState(0);
 	const navigate = useNavigate();

@@ -18,19 +18,14 @@ const Item = ({ product }) => {
 				<Card.Text>{title}</Card.Text>
 				<Card.Title>${price}</Card.Title>
 			</Card.Body>
-			<Card.Header>Detalles</Card.Header>
-			<ListGroup className="list-group-flush">
-				<ListGroup.Item>{description}</ListGroup.Item>
-			</ListGroup>
-			<Card.Body>
+			<Card.Header>
 				<Button
 					onClick={() => showDetails()}
 					className="btn btn-outline-primary"
 				>
 					Mostrar más
 				</Button>
-				<ItemCount />
-			</Card.Body>
+			</Card.Header>
 		</Card>
 	);
 };
