@@ -17,7 +17,11 @@ export const CartProvider = ({ children }) => {
 				setItems(newItem);
 				console.log("newItem", newItem);
 			} else setItems([...items, { producto, quantity: quantity }]);
-		} else setItems([{ producto, quantity: quantity }]);
+		} else
+			setItems(
+				[{ producto, quantity: quantity }],
+				console.log("entré a la linea 20")
+			);
 		setQuantityItems(quantityItems + quantity);
 	};
 

@@ -8,18 +8,12 @@ const Item = ({ product }) => {
 	const { addItem } = useContext(CartContext);
 	const [added, setAdded] = useState(false);
 	const { title, price, category, description, image } = product;
-	const [quantity, setQuantity] = useState(0);
+	const [quantity, setQuantity] = useState(1);
 	const navigate = useNavigate();
 
-	const getRandomInt = () => {
-		var stock = Math.random() * (10 - 1) + 1;
-		stock = Math.round(stock);
-		return stock;
-	};
-
 	function showCheckout() {
-		document.getElementById("CheckOut").classList.toggle("hidden");
 		addItem(product, quantity);
+		setAdded(true);
 	}
 	const checkOut = () => {
 		navigate(`/Cart`);
@@ -37,17 +31,16 @@ const Item = ({ product }) => {
 				<ListGroup.Item>{description}</ListGroup.Item>
 			</ListGroup>
 			<Card.Body>
-				<ItemCount
-					count={quantity}
-					stock={getRandomInt()}
-					setQuantity={setQuantity}
-				/>
+				{added ? (
+					<div>
+						<Button onClick={() => checkOut()}>terminar mi compra</Button>
+					</div>
+				) : (
+					<ItemCount count={quantity} stock={10} setQuantity={setQuantity} />
+				)}
 				<Button className="btn" onClick={() => showCheckout()}>
 					{" "}
 					añadir al carrito{" "}
-				</Button>
-				<Button id="CheckOut" className="hidden" onClick={() => checkOut()}>
-					terminar mi compra
 				</Button>
 			</Card.Body>
 		</Card>

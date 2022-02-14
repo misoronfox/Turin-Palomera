@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Card, Col, Row, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-const ShoppingCart = () => {
+const Cart = () => {
 	const { items } = useContext(CartContext);
 	const navigate = useNavigate();
 	console.log(items, "sopping cart");
@@ -42,4 +42,4 @@ const ShoppingCart = () => {
 			</Row>
 		);
 };
-export default ShoppingCart;
+export default Cart;
