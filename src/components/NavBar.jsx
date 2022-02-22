@@ -1,11 +1,13 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import CartWidjet from "./CartWidjet.jsx";
-import { getAllCategories } from "../services/Products.js";
+import { getAllCategories } from "../Firebase";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbarra = () => {
 	const [categories, setCategories] = useState([]);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		let mounted = true;
@@ -33,8 +35,9 @@ const Navbarra = () => {
 				<Nav className="col-8 ">
 					{categories.map((category) => (
 						<Nav.Link
+							key={category}
 							className="NavDropDownItem col"
-							href={`/category/${category}`}
+							onClick={() => navigate(`/category/${category}`)}
 						>
 							{category}
 						</Nav.Link>

@@ -2,8 +2,7 @@ import { Container, Row } from "react-bootstrap";
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import App from "../App";
-import { getProductsFromCategory, getAllProducts } from "../services/Products";
+import { getProductsFromCategory, getAllProducts } from "../Firebase";
 
 const ItemListContainer = () => {
 	const [products, setProducts] = useState([]);

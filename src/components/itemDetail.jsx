@@ -11,7 +11,7 @@ const Item = ({ product }) => {
 	const [quantity, setQuantity] = useState(1);
 	const navigate = useNavigate();
 
-	function showCheckout() {
+	function onAdd() {
 		addItem(product, quantity);
 		setAdded(true);
 	}
@@ -38,7 +38,7 @@ const Item = ({ product }) => {
 				) : (
 					<ItemCount count={quantity} stock={10} setQuantity={setQuantity} />
 				)}
-				<Button className="btn" onClick={() => showCheckout()}>
+				<Button className="btn" onClick={() => onAdd(product, quantity)}>
 					{" "}
 					añadir al carrito{" "}
 				</Button>

@@ -11,12 +11,5 @@ const ItemList = ({ products }) => {
 			))}
 		</>
 	);
-
-	/*let products = prop.map(item => {
-          return( 
-            Item({item.id, item.title, item.price, item.pictureUrl})
-          ) 
-        })
-    return products;*/
 };
 export default ItemList;

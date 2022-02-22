@@ -1,5 +1,4 @@
-import ItemCount from "./ItemCount";
-import { Card, ListGroup, Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const Item = ({ product }) => {
@@ -8,7 +7,7 @@ const Item = ({ product }) => {
 
 	const showDetails = () => {
 		navigate(`/Item/${id}`);
-		console.log(id, "caca");
+		console.log(id, "id en item");
 	};
 
 	return (

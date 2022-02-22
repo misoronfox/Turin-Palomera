@@ -2,12 +2,12 @@ import { Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { getProductsById } from "../services/Products";
+import { getProductsById } from "../Firebase";
 
 const ItemDetailContainer = () => {
 	const { id } = useParams();
-	const [product, setProduct] = useState({ title: "caca" });
-	console.log(id, "cacax2");
+	const [product, setProduct] = useState({});
+	console.log(id, "itemDetailContainer");
 
 	useEffect(() => {
 		let mounted = true;
