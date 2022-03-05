@@ -1,5 +1,5 @@
 import './styles/App.css' ;
-import Navbarra from './components/NavBar';
+import NavBar from './components/NavBar';
 import './styles/StyleSheet.css';
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer';
@@ -13,7 +13,7 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter>
-        <Navbarra/>
+        <NavBar/>
         <Routes >
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/Item/:id" element={<ItemDetailContainer />} />

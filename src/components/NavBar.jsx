@@ -5,7 +5,7 @@ import { getAllCategories } from "../Firebase";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Navbarra = () => {
+const NavBar = () => {
 	const [categories, setCategories] = useState([]);
 	const navigate = useNavigate();
 
@@ -66,4 +66,4 @@ const Navbarra = () => {
 	);
 };
 
-export default Navbarra;
+export default NavBar;
