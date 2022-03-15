@@ -13,7 +13,6 @@ const ItemListContainer = () => {
 		if (id) {
 			getProductsFromCategory(id).then((items) => {
 				if (mounted) {
-					console.log(items);
 					setProducts(items);
 				}
 			});
@@ -28,9 +27,9 @@ const ItemListContainer = () => {
 	}, [id]);
 
 	return (
-		<Container>
+		<Container className="listContainer">
 			<Row>
-				<ItemList products={products} />
+				<ItemList className=" item-listContainer" products={products} />
 			</Row>
 		</Container>
 	);

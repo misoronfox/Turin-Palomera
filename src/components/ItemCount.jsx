@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 
 const ItemCount = ({ count, stock, setQuantity }) => {
 	const DecreaseCounter = (count, stock) => {
@@ -18,23 +18,29 @@ const ItemCount = ({ count, stock, setQuantity }) => {
 	};
 
 	return (
-		<div className="row">
-			<div className="col">
-				<Button onClick={() => DecreaseCounter(count, stock)} className="btn ">
+		<Row className="justify-content-md-center">
+			<Col>
+				<Button
+					onClick={() => DecreaseCounter(count, stock)}
+					className="btn  btn-itemListContainer"
+				>
 					<i className="bi bi-arrow-left-circle"></i>
 				</Button>
-			</div>
+			</Col>
 
-			<div className="col">
+			<Col>
 				<p>{count}</p>
-			</div>
+			</Col>
 
-			<div className="col">
-				<Button onClick={() => IncreaseCounter(count, stock)} className="btn ">
+			<Col>
+				<Button
+					onClick={() => IncreaseCounter(count, stock)}
+					className="btn btn-itemListContainer "
+				>
 					<i className="bi bi-arrow-right-circle"></i>
 				</Button>
-			</div>
-		</div>
+			</Col>
+		</Row>
 	);
 };
 export default ItemCount;

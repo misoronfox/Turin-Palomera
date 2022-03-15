@@ -7,13 +7,11 @@ import { getProductsById } from "../Firebase";
 const ItemDetailContainer = () => {
 	const { id } = useParams();
 	const [product, setProduct] = useState({});
-	console.log(id, "itemDetailContainer");
 
 	useEffect(() => {
 		let mounted = true;
 		getProductsById(id).then((item) => {
 			if (mounted) {
-				console.log(item);
 				setProduct(item);
 			}
 		});
@@ -21,9 +19,9 @@ const ItemDetailContainer = () => {
 	}, [id]);
 
 	return (
-		<Container className=" container">
-			<Row className=" row">
-				<ItemDetail className="col" product={product} />
+		<Container className="container detailContainer">
+			<Row className="justify-content-md-center">
+				<ItemDetail product={product} />
 			</Row>
 		</Container>
 	);

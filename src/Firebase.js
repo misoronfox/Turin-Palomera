@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import {getFirestore,doc,  getDoc, getDocs,  collections, collection} from "firebase/firestore"
+
+import {getFirestore,doc,addDoc,  getDoc, getDocs,   collection} from "firebase/firestore"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,7 +19,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+
 export const db = getFirestore(app);
 
 
@@ -38,18 +39,25 @@ export const getProductsFromCategory = async (category) => {
 export const getProductsById = async (id) => {
   const snap = await getDoc(doc(db, 'Items', id));
   let producto = snap.data();
-  console.log(producto);
   return producto;
 }
 
 export const getAllCategories = async () => {
   let categories = await getDocs(collection(db, "Category"));
-  console.log(categories);
+ 
   return categories.docs.map(category => category.id);
 }
 
 export const getAllProducts = async () => {
   let products = await getDocs(collection(db, "Items"));
   return products.docs.map(producto => producto.data());
+}
+
+export const addProduct = async (items, date) => {
+   let docRef = await addDoc(collection(db, "Pedidos"), {
+    order: items, 
+    date: date
+});
+return docRef.id
 }
 

@@ -22,7 +22,7 @@ const NavBar = () => {
 	return (
 		<Navbar className="NavBar row ">
 			<Container className="container">
-				<Navbar.Brand href="/">
+				<Navbar.Brand className="col" href="/">
 					<img
 						alt="Turin logo"
 						src="https://i.imgur.com/GcktedB.png"
@@ -43,21 +43,6 @@ const NavBar = () => {
 						</Nav.Link>
 					))}
 				</Nav>
-
-				<div className="col-3">
-					<form className=" row">
-						<input
-							className="form-control col-2"
-							type="text"
-							id="search-bar"
-							placeholder="Buscar"
-							name="s"
-						/>
-						<button type="submit" className="col-1 btn btn-outline-primary">
-							Search{" "}
-						</button>
-					</form>
-				</div>
 				<div className="col">
 					<CartWidjet />
 				</div>
